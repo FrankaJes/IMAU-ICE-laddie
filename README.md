@@ -1,11 +1,10 @@
 # IMAU-ICE-laddie
 Coupling framework between IMAU-ICE and laddie
 
-### Contains the following files:
-Folder 'conversion_scripts':
-- 'convert_meltfield.py' which converts melt output from laddie to melt input for IMAU-ICE
-- 'convert_geometry.py' which converts latest geometry output from IMAU-ICE to geometry input for laddie
+### Contains the following:
+- Bash script 'run_laddie_template.sh' which is copied (and adjusted) to the output directory by IMAU-ICE subroutine 'initialise_BMB_model_LADDIE' and consequently executed by IMAU-ICE subroutine 'run_BMB_model_LADDIE'.
 
-Folder 'initialisation':
-- 'initial_IMAUICE_restart.nc' which is the restart file for IMAUICE, where you start your coupled run from
-- 'initial_laddie_restart.nc' which is the restart file for laddie, this file is read the first time the BMB_module is called
+- Folder 'laddie_config_templates', containing config files for laddie.
+  - 'config_template_MISOMIP.toml', runs MISOMIP experiments, T1 (temperature at depth can be changed in IMAU-ICE config files)
+
+- Folder 'spinup_results', containing results from spinups which can be used as initial laddie BMB (BMB_laddie_filename_initial_BMB_config) and laddie restart file (BMB_laddie_filename_initial_restart_config).
